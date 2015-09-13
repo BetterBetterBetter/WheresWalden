@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+    	<field name="id" type="hidden" default="0" label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_ID" readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="title" type="text" label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_TITLE" description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_TITLE"  required="true" menu_published="0" filter="safehtml" /> 
+			
+		<field name="state" type="radio" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" size="1" default="1" class="radio btn-group btn-group-yesno">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field> 
+
+       <field name="def_lat" type="text"
+                
+            label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_DEF_LAT"
+            description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_DEF_LAT" 
+                 default="1" 
+                
+                 required="true" 
+            menu_published="0"
+            filter="float" /> 
+
+       <field name="def_lng" type="text"
+                
+            label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_DEF_LNG"
+            description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_DEF_LNG" 
+                 default="1" 
+                
+                 required="true" 
+            menu_published="0"
+            filter="float" /> 
+
+       <field name="show_users" type="radio"  label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_SHOW_USERS" description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_SHOW_USERS" default="1"  class="radio btn-group btn-group-yesno">
+                <option value="0">JNo</option>
+                <option value="1">JYes</option>
+        </field> 
+
+ 
+		<field name="filter_show_users" type="list" onchange="this.form.submit();">
+			<option value="">COM_GEOMMUNITY3ES_MAPS_SHOW_USERS_FILTER</option>
+			<option value="0">JNo</option>
+			<option value="1">JYes</option>
+		</field> 
+
+       <field name="users_addressfield_id" type="text" label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_USERS_ADDRESSFIELD_ID" description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_USERS_ADDRESSFIELD_ID" default="" filter="safehtml" /> 
+
+       <field name="profiletypes" type="text" label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_PROFILETYPES" description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_PROFILETYPES"   /> 
+
+       <field name="onlineonly" type="radio" label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_ONLINEONLY"  description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_ONLINEONLY"   default="0"  class="radio btn-group btn-group-yesno" >
+                <option value="0">JNo</option>
+                <option value="1">JYes</option>
+        </field> 
+
+ 
+		<field name="filter_onlineonly" type="list" onchange="this.form.submit();">
+			<option value="">COM_GEOMMUNITY3ES_MAPS_ONLINEONLY_FILTER</option>
+			<option value="0">JNo</option>
+			<option value="1">JYes</option>
+		</field> 
+
+       <field name="usermarker" type="radio" label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_AVATARMARKER" description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_AVATARMARKER"   default="1" class="radio btn-group">
+                <option value="1">User marker</option>
+				<option value="2">User Avatars</option>
+				<option value="3">Profile Types markers</option>
+        </field> 
+
+
+       <field name="show_photoalbums" type="radio"   
+            label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_SHOW_PHOTOALBUMS" description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_SHOW_PHOTOALBUMS"  default="0" class="radio btn-group btn-group-yesno">
+                <option value="0">JNo</option>
+                <option value="1">JYes</option>
+        </field> 
+
+ 
+		<field name="filter_show_photoalbums" type="list" onchange="this.form.submit();">
+			<option value="">COM_GEOMMUNITY3ES_MAPS_SHOW_PHOTOALBUMS_FILTER</option>
+			<option value="0">JNo</option>
+			<option value="1">JYes</option>
+		</field> 
+
+       <field name="show_photos" type="radio"  label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_SHOW_PHOTOS"  description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_SHOW_PHOTOS" default="0" class="radio btn-group btn-group-yesno">
+                <option value="0">JNo</option>
+                <option value="1">JYes</option>
+        </field> 
+
+ 
+		<field name="filter_show_photos" type="list" onchange="this.form.submit();">
+			<option value="">COM_GEOMMUNITY3ES_MAPS_SHOW_PHOTOS_FILTER</option>
+			<option value="0">JNo</option>
+			<option value="1">JYes</option>
+		</field> 
+		
+		
+		
+		
+		
+		
+		<field name="show_videos" type="radio"  label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_SHOW_VIDEOS"  description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_SHOW_VIDEOS" default="0" class="radio btn-group btn-group-yesno">
+                <option value="0">JNo</option>
+                <option value="1">JYes</option>
+        </field> 
+
+ 
+		<field name="filter_show_videos" type="list" onchange="this.form.submit();">
+			<option value="">COM_GEOMMUNITY3ES_MAPS_SHOW_VIDEOS_FILTER</option>
+			<option value="0">JNo</option>
+			<option value="1">JYes</option>
+		</field> 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+       <field name="show_groups" type="radio" label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_SHOW_GROUPS"  description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_SHOW_GROUPS" default="0" class="radio btn-group btn-group-yesno">
+                <option value="0">JNo</option>
+                <option value="1">JYes</option>
+        </field> 
+
+ 
+		<field name="filter_show_groups" type="list" onchange="this.form.submit();">
+			<option value="">COM_GEOMMUNITY3ES_MAPS_SHOW_GROUPS_FILTER</option>
+			<option value="0">JNo</option>
+			<option value="1">JYes</option>
+		</field> 
+
+       <field name="groups_addressfield_id" type="text"
+                
+            label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_GROUPS_ADDRESSFIELD_ID"
+            description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_GROUPS_ADDRESSFIELD_ID" 
+            menu_published="0"
+            filter="safehtml" /> 
+
+       <field name="show_events" type="radio" label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_SHOW_EVENTS" description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_SHOW_EVENTS"  default="0"  class="radio btn-group btn-group-yesno">
+                <option value="0">JNo</option>
+                <option value="1">JYes</option>
+        </field> 
+
+ 
+		<field name="filter_show_events" type="list" onchange="this.form.submit();">
+			<option value="">COM_GEOMMUNITY3ES_MAPS_SHOW_EVENTS_FILTER</option>
+			<option value="0">JNo</option>
+			<option value="1">JYes</option>
+		</field> 
+
+       <field name="events_addressfield_id" type="text"
+                
+            label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_EVENTS_ADDRESSFIELD_ID"
+            description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_EVENTS_ADDRESSFIELD_ID" 
+            menu_published="0"
+            filter="safehtml" /> 
+			
+			
+			
+			
+		<field name="show_easyblogs" type="radio"  label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_SHOW_EASYBLOGS"  description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_SHOW_EASYBLOGS" default="0" class="radio btn-group btn-group-yesno">
+                <option value="0">JNo</option>
+                <option value="1">JYes</option>
+        </field> 
+
+ 
+		<field name="filter_show_easyblogs" type="list" onchange="this.form.submit();">
+			<option value="">COM_GEOMMUNITY3ES_MAPS_SHOW_EASYBLOGS_FILTER</option>
+			<option value="0">JNo</option>
+			<option value="1">JYes</option>
+		</field> 
+			
+			
+			
+			
+			
+			
+			
+
+       <field name="kmlurl" type="textarea"
+                
+            label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_KMLURL"
+            description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_KMLURL" 
+                
+                
+                
+            cols="100"
+            rows="8"
+            filter="safehtml" /> 
+
+       <field name="privacyaware" type="radio"
+                
+            label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_PRIVACYAWARE"
+            description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_PRIVACYAWARE" 
+                 default="1" class="radio btn-group btn-group-yesno">
+                <option value="0">JNo</option>
+                <option value="1">JYes</option>
+        </field> 
+
+       	<field name="created_by" type="createdby" default=""  label="COM_GEOMMUNITY3ES_FORM_LBL_MAP_CREATED_BY" description="COM_GEOMMUNITY3ES_FORM_DESC_MAP_CREATED_BY"  /> 
+        <field name="checked_out" type="hidden" filter="unset" />
+    	<field name="checked_out_time" type="hidden" filter="unset" />
+	</fieldset>
+</form>

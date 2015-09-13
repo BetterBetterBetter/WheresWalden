@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.3"
+	client="site"
+	method="upgrade">
+	<name>Geommunity3ES  - Map</name>
+	<author>Nordmograph</author>
+	<creationDate>June 2014</creationDate>
+	<copyright>Copyright (C) 2005 - 2014 Nordmograph.com Adrien ROUSSEL.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorEmail>contact@nordmograph.com</authorEmail>
+	<authorUrl>www.nordmograph.com/extensions</authorUrl>
+	<version>1.1</version>
+	<description>MOD_GEOMMUNITY3ES_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_geommunity3es">mod_geommunity3es.php</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>mod_geommunity3es.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_geommunity3es.ini</language>
+		<language tag="en-GB">fr-FR.mod_geommunity3es.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			<field name="mapid" type="sql"
+				label="Select Map"
+					description=""
+					query="select id, title from #__geommunity3es_maps where state='1' order by title ASC "
+					key_field="id" value_field="title"
+				>	
+				</field>
+				<field
+					name="width"
+					type="text"
+					default="100%"
+					label="Map Width"					
+					description="" />
+				<field
+					name="height"
+					type="text"
+					default="400px"
+					label="Map Height"
+					description="" />
+					
+				<field
+					name="html5"
+					type="radio"
+					default="1"
+					label="HTML5 Geolocation"
+					description="This will ask the visitor to share current location to center the map. If visitor refuses or if you disable the option, module will center the map on map's default coordinates. If the visitor is logued in, it will use it's stored location (if not null) instead of default values." class="radio btn-group btn-group-yesno">
+						<option value="0">JNo</option>
+						<option value="1">JYes</option>
+				</field>
+				
+				
+				<field
+					name="zoom"
+					type="list"
+					default="10"
+					label="Zoom"
+					description="Zoom" >
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+				</field>
+				<field
+					name="min_zoom"
+					type="list"
+					default="5"
+					label="Min Zoom"
+					description="Min Zoom"  >
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+				</field>
+				<field
+					name="max_zoom"
+					type="list"
+					default="15"
+					label="Max Zoom"
+					description="Max Zoom"  >
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+				</field>
+				<field
+					name="scrollwheel"
+					type="radio"
+					default="0"
+					label="Srollwheel Zoom"
+					description="Enable or disable Scrollwheel Zoom. Enable it would send much more Ajax requests. " class="radio btn-group btn-group-yesno">
+						<option value="0">JNo</option>
+						<option value="1">JYes</option>
+				</field>
+				<field name="show_streetview" type="radio" default="1" label="Show StreetView Icon" description="Show or not the StreetView icon. On first versions of the module Streetview was added to the infowindow, but now the module uses the Googlemap API v3, Streetview is part of the map controls." class="radio btn-group btn-group-yesno">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="map_type" type="list" default="ROADMAP" label="Default Map Type" description="" >
+					<option value="ROADMAP">Normal Map</option>
+					<option value="SATELLITE">Satellite Map</option>
+					<option value="HYBRID">Hybrid Map</option>
+					<option value="TERRAIN">Physical Map</option>
+				</field>
+				<field name="stylez" type="textarea" filter="raw" default="" label="Map Custom Styling" description="You can customize the map layout colors. Basicaly you need to paste in this field the JSON code you get on http://tinyurl.com/map-styler"  />
+				<field
+					name="address_search"
+					type="radio"
+					default="1"
+					label="Show Address Search"
+					description="A search field for generic locations or addresses. Usefull to locate the map view point on a specific area." class="radio btn-group btn-group-yesno">
+						<option value="0">JNo</option>
+						<option value="1">JYes</option>
+				</field>
+				<field
+					name="marker_search"
+					type="radio"
+					default="1"
+					label="Show Marker Search"
+					description="An autocomplete search field for markers according to selected integrations (users, groups, albums photos etc...). KML data not indexed here." class="radio btn-group btn-group-yesno">
+						<option value="0">JNo</option>
+						<option value="1">JYes</option>
+				</field>
+				
+				
+				<field
+					name="profiletypes_filter"
+					type="radio"
+					default="1"
+					label="Profile Types Filter"
+					description="Enable or disable Profile Types dynamic filter. Note this can not be enabled if there are not at least 2 profiletypes" class="radio btn-group btn-group-yesno">
+						<option value="0">JNo</option>
+						<option value="1">JYes</option>
+				</field>
+				<field name="custom_filter" type="text" default="" label="Custom Field Filter (updated!)" description="You can choose a profile field to filter users according the that field result. It could be Gender field or Graduation year etc... Just input the custom field UNIQUE KEY (not ID anymore as unique_key is much easier to find). This feature is beta."  />
+				<field
+					name="parallax"
+					type="hidden"
+					default="0"
+					label="Parallax Effect"
+					description="This enables a smooth parallax effect on the map when scrolling up and down the page" class="radio btn-group btn-group-yesno">
+						<option value="0">JNo</option>
+						<option value="1">JYes</option>
+				</field>
+				<field
+					name="fullscreen_button"
+					type="radio"
+					default="1"
+					label="Fullscreen Button"
+					description="This enables a FullScreen Button allowing Visitor to toggle Full Screen mode. Full Screen mode can also be exited using the ESC key" class="radio btn-group btn-group-yesno">
+						<option value="0">JNo</option>
+						<option value="1">JYes</option>
+				</field>
+				<field
+					name="clustering"
+					type="radio"
+					default="2"
+					label="Clustering"
+					description="This enables a clustering on markers. The Optional option gives the ability to visitors to enable and disable clustering on the map in realtime." class="radio btn-group btn-group-yesno">
+						<option value="0">JNo</option>
+						<option value="1">JYes</option>
+						<option value="2">Yes, optional</option>
+				</field>
+				<field
+					name="cluster_lib"
+					type="radio"
+					default="1"
+					label="Cluster Library"
+					description="The online library is prefered. But if your map has markers having the exact same location, the custom cluster liabrary is required" class="radio btn-group">
+						<option value="1">Online</option>
+						<option value="2">Custom</option>
+				</field>
+				
+				<field
+					name="drop_markers"
+					type="radio"
+					default="1"
+					label="Drop Markers"
+					description="Drop effect on markers when they are added to map" class="radio btn-group btn-group-yesno">
+						<option value="0">JNo</option>
+						<option value="1">JYes</option>
+				</field>
+				</fieldset>
+				
+			<fieldset name="positions">
+				<field
+					name="integrations_position"
+					type="list"
+					default="BOTTOM_LEFT"
+					label="Integrations Position"
+					description="The the position on map to display Integrations checkboxes. Default: BOTTOM_LEFT" >
+						<option value="TOP_CENTER">TOP_CENTER</option>
+						<option value="TOP_LEFT">TOP_LEFT</option>
+						<option value="TOP_RIGHT">TOP_RIGHT</option>
+						<option value="LEFT_TOP">LEFT_TOP</option>
+						<option value="RIGHT_TOP">RIGHT_TOP</option>
+						<option value="LEFT_CENTER">LEFT_CENTER</option>
+						<option value="RIGHT_CENTER">RIGHT_CENTER</option>
+						<option value="LEFT_BOTTOM">LEFT_BOTTOM</option>
+						<option value="RIGHT_BOTTOM">RIGHT_BOTTOM</option>
+						<option value="BOTTOM_CENTER">BOTTOM_CENTER</option>
+						<option value="BOTTOM_LEFT">BOTTOM_LEFT</option>
+						<option value="BOTTOM_RIGHT">BOTTOM_RIGHT</option>
+
+				</field>
+				<field
+					name="teleportation_position"
+					type="list"
+					default="TOP_LEFT"
+					label="Teleportation Position"
+					description="The the position on map to display Teleportation search. Default: TOP_LEFT" >
+						<option value="TOP_CENTER">TOP_CENTER</option>
+						<option value="TOP_LEFT">TOP_LEFT</option>
+						<option value="TOP_RIGHT">TOP_RIGHT</option>
+						<option value="LEFT_TOP">LEFT_TOP</option>
+						<option value="RIGHT_TOP">RIGHT_TOP</option>
+						<option value="LEFT_CENTER">LEFT_CENTER</option>
+						<option value="RIGHT_CENTER">RIGHT_CENTER</option>
+						<option value="LEFT_BOTTOM">LEFT_BOTTOM</option>
+						<option value="RIGHT_BOTTOM">RIGHT_BOTTOM</option>
+						<option value="BOTTOM_CENTER">BOTTOM_CENTER</option>
+						<option value="BOTTOM_LEFT">BOTTOM_LEFT</option>
+						<option value="BOTTOM_RIGHT">BOTTOM_RIGHT</option>
+
+				</field>
+				<field
+					name="markersearch_position"
+					type="list"
+					default="TOP_CENTER"
+					label="Marker Search Position"
+					description="The the position on map to display Marker Search search. Default: TOP_CENTER" >
+						<option value="TOP_CENTER">TOP_CENTER</option>
+						<option value="TOP_LEFT">TOP_LEFT</option>
+						<option value="TOP_RIGHT">TOP_RIGHT</option>
+						<option value="LEFT_TOP">LEFT_TOP</option>
+						<option value="RIGHT_TOP">RIGHT_TOP</option>
+						<option value="LEFT_CENTER">LEFT_CENTER</option>
+						<option value="RIGHT_CENTER">RIGHT_CENTER</option>
+						<option value="LEFT_BOTTOM">LEFT_BOTTOM</option>
+						<option value="RIGHT_BOTTOM">RIGHT_BOTTOM</option>
+						<option value="BOTTOM_CENTER">BOTTOM_CENTER</option>
+						<option value="BOTTOM_LEFT">BOTTOM_LEFT</option>
+						<option value="BOTTOM_RIGHT">BOTTOM_RIGHT</option>
+
+				</field>
+				<field
+					name="ajaxloader_position"
+					type="list"
+					default="BOTTOM_CENTER"
+					label="Ajax Loader Position"
+					description="The the position on map to display Ajax Loader. Default: BOTTOM_CENTER" >
+						<option value="TOP_CENTER">TOP_CENTER</option>
+						<option value="TOP_LEFT">TOP_LEFT</option>
+						<option value="TOP_RIGHT">TOP_RIGHT</option>
+						<option value="LEFT_TOP">LEFT_TOP</option>
+						<option value="RIGHT_TOP">RIGHT_TOP</option>
+						<option value="LEFT_CENTER">LEFT_CENTER</option>
+						<option value="RIGHT_CENTER">RIGHT_CENTER</option>
+						<option value="LEFT_BOTTOM">LEFT_BOTTOM</option>
+						<option value="RIGHT_BOTTOM">RIGHT_BOTTOM</option>
+						<option value="BOTTOM_CENTER">BOTTOM_CENTER</option>
+						<option value="BOTTOM_LEFT">BOTTOM_LEFT</option>
+						<option value="BOTTOM_RIGHT">BOTTOM_RIGHT</option>
+
+				</field>
+				<field
+					name="customfilter_position"
+					type="list"
+					default="RIGHT_TOP"
+					label="Custom Filter Position"
+					description="The the position on map to display Custom Filter. Default: RIGHT_TOP" >
+						<option value="TOP_CENTER">TOP_CENTER</option>
+						<option value="TOP_LEFT">TOP_LEFT</option>
+						<option value="TOP_RIGHT">TOP_RIGHT</option>
+						<option value="LEFT_TOP">LEFT_TOP</option>
+						<option value="RIGHT_TOP">RIGHT_TOP</option>
+						<option value="LEFT_CENTER">LEFT_CENTER</option>
+						<option value="RIGHT_CENTER">RIGHT_CENTER</option>
+						<option value="LEFT_BOTTOM">LEFT_BOTTOM</option>
+						<option value="RIGHT_BOTTOM">RIGHT_BOTTOM</option>
+						<option value="BOTTOM_CENTER">BOTTOM_CENTER</option>
+						<option value="BOTTOM_LEFT">BOTTOM_LEFT</option>
+						<option value="BOTTOM_RIGHT">BOTTOM_RIGHT</option>
+
+				</field>
+				<field
+					name="profiletypefilter_position"
+					type="list"
+					default="RIGHT_BOTTOM"
+					label="profile types Filter Position"
+					description="The the position on map to display profile Filter. Default: RIGHT_BOTTOM" >
+						<option value="TOP_CENTER">TOP_CENTER</option>
+						<option value="TOP_LEFT">TOP_LEFT</option>
+						<option value="TOP_RIGHT">TOP_RIGHT</option>
+						<option value="LEFT_TOP">LEFT_TOP</option>
+						<option value="RIGHT_TOP">RIGHT_TOP</option>
+						<option value="LEFT_CENTER">LEFT_CENTER</option>
+						<option value="RIGHT_CENTER">RIGHT_CENTER</option>
+						<option value="LEFT_BOTTOM">LEFT_BOTTOM</option>
+						<option value="RIGHT_BOTTOM">RIGHT_BOTTOM</option>
+						<option value="BOTTOM_CENTER">BOTTOM_CENTER</option>
+						<option value="BOTTOM_LEFT">BOTTOM_LEFT</option>
+						<option value="BOTTOM_RIGHT">BOTTOM_RIGHT</option>
+
+				</field>
+			</fieldset>
+			
+			
+			
+			
+			<fieldset name="embedmodule">
+				<field name="addmodule" type="text"  default="" label="Embed Module Position" description="You can embed other modules to the map by setting their position to the one set here."  />
+				<field
+					name="addmodule_position"
+					type="list"
+					default="RIGHT_CENTER"
+					label="Embed Position"
+					description="The the position on map to display embed module(s)" >
+						<option value="TOP_CENTER">TOP_CENTER</option>
+						<option value="TOP_LEFT">TOP_LEFT</option>
+						<option value="TOP_RIGHT">TOP_RIGHT</option>
+						<option value="LEFT_TOP">LEFT_TOP</option>
+						<option value="RIGHT_TOP">RIGHT_TOP</option>
+						<option value="LEFT_CENTER">LEFT_CENTER</option>
+						<option value="RIGHT_CENTER">RIGHT_CENTER</option>
+						<option value="LEFT_BOTTOM">LEFT_BOTTOM</option>
+						<option value="RIGHT_BOTTOM">RIGHT_BOTTOM</option>
+						<option value="BOTTOM_CENTER">BOTTOM_CENTER</option>
+						<option value="BOTTOM_LEFT">BOTTOM_LEFT</option>
+						<option value="BOTTOM_RIGHT">BOTTOM_RIGHT</option>
+
+				</field>
+				<field
+					name="closemodule"
+					type="radio"
+					default="1"
+					label="Close Button"
+					description="Show a remove button to let user remove the embed module" class="radio btn-group btn-group-yesno">
+						<option value="0">JNo</option>
+						<option value="1">JYes</option>
+				</field>
+				
+			</fieldset>
+			<fieldset name="advanced">
+			<field
+					name="include_jquery"
+					type="radio"
+					default="0"
+					label="Include jQuery"
+					description="If jQuery is not loaded by your template, you can enable it here. Make sure it is not loaded twice." class="radio btn-group btn-group-yesno">
+						<option value="0">JNo</option>
+						<option value="1">JYes</option>
+				</field>
+				<field name="jquery_url" type="text" default="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" label="jQuery URL" description=""  />
+				<field name="jqueryui_url" type="text" default="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js" label="jQuery UI URL" description="Will only be loaded if you use the Autocomplete Marker Search"  />
+				<field name="jqueryui_css" type="text"  default="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" label="jQuery UI CSS" description="Will only be loaded if you use the Autocomplete Marker Search"  />
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

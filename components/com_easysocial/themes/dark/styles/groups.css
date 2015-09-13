@@ -1,0 +1,18 @@
+body div#fd.es .list-media-group li.is-owner .list-media-footer {
+  display: none;
+}
+body div#fd.es .list-media-group li.is-loading a.btn-loading {
+  display: block;
+}
+body div#fd.es .list-media-group li.is-member a.btn-leave-group {
+  display: block;
+}
+body div#fd.es .list-media-group li.is-invited a.btn-respond-invitation {
+  display: block;
+}
+body div#fd.es .list-media-group li.is-guest a.btn-join-group {
+  display: block;
+}
+body div#fd.es .list-media-group .list-media-footer a {
+  display: none;
+}

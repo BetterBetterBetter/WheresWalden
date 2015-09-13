@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?93012759');
+  src: url('../font/fontello.eot?93012759#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff?93012759') format('woff'),
+       url('../font/fontello.ttf?93012759') format('truetype'),
+       url('../font/fontello.svg?93012759#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?93012759#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="geom-icon-"]:before, [class*=" geom-icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.geom-icon-filter:before { content: '\e800'; } /* '' */
+.geom-icon-qrcode:before { content: '\e801'; } /* '' */
+.geom-icon-user:before { content: '\e802'; } /* '' */
+.geom-icon-cancel:before { content: '\e803'; } /* '' */
+.geom-icon-users:before { content: '\e804'; } /* '' */
+.geom-icon-wifi:before { content: '\e805'; } /* '' */
+.geom-icon-picture:before { content: '\e806'; } /* '' */
+.geom-icon-folder:before { content: '\e807'; } /* '' */
+.geom-icon-paperclip:before { content: '\e808'; } /* '' */
+.geom-icon-eye:before { content: '\e809'; } /* '' */
+.geom-icon-edit:before { content: '\e80a'; } /* '' */
+.geom-icon-plus:before { content: '\e80b'; } /* '' */
+.geom-icon-mail:before { content: '\e80c'; } /* '' */
+.geom-icon-flag:before { content: '\e80d'; } /* '' */
+.geom-icon-location:before { content: '\e80e'; } /* '' */
+.geom-icon-calendar:before { content: '\e80f'; } /* '' */
+.geom-icon-screen:before { content: '\e810'; } /* '' */
+.geom-icon-locked:before { content: '\e811'; } /* '' */
+.geom-icon-unlocked:before { content: '\e812'; } /* '' */
+.geom-icon-globe:before { content: '\e813'; } /* '' */
+.geom-icon-info:before { content: '\e814'; } /* '' */
+.geom-icon-loop:before { content: '\e815'; } /* '' */
+.geom-icon-video:before { content: '\e816'; } /* '' */

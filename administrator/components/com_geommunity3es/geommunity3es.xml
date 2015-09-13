@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.4" method="upgrade">
+    <name>com_geommunity3es</name>
+    <creationDate>2014-05-21</creationDate>
+    <copyright>Copyright (C) 2015. Adrien ROUSSEL Nordmograph.com All rights reserved.</copyright>
+    <license>GNU General Public License version 3; see LICENSE.txt</license>
+    <author>Nordmograph</author>
+    <authorEmail>contact@nordmograph.com</authorEmail>
+    <authorUrl>http://www.nordmograph.com./extensions</authorUrl>
+    <version>1.1.2</version>
+    <description>This component provides settings to build custom Ajax maps of EasySocial users, media, groups and events and external KML data. It provides Various dynamic Profile types, custom field, integration types (users, photos, groups etc...) and clustering filters. It has a powerfull autocomplete marker search in Conjunction with another Google Place API search. Map style is customizable. Read the online documentation for more informations.</description>
+    <scriptfile>script.php</scriptfile> 
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+	<update> 
+		<schemas> 
+			<schemapath type="mysql">sql/updates/mysql</schemapath> 
+		</schemas> 
+	</update>
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>geommunity3es.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+		<folder>assets</folder>
+    </files>
+    <languages folder="site">
+        
+			<language tag="en-GB">language/en-GB/en-GB.com_geommunity3es.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.com_geommunity3es.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_geommunity3es/assets/images/s_com_geommunity3es.png" >COM_GEOMMUNITY3ES</menu>
+        <submenu>
+            
+			<menu link="option=com_geommunity3es&amp;view=maps" view="maps" img="components/com_geommunity3es/assets/images/s_maps.png" alt="Geommunity3es/Maps">COM_GEOMMUNITY3ES_TITLE_MAPS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>geommunity3es.php</filename>
+			<filename>geommunity3es.xml</filename>
+			<filename>script.php</filename>
+            <folder>assets</folder>
+			<folder>controllers</folder>
+            <folder>helpers</folder>
+			<folder>install</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="administrator">
+            
+			<language tag="en-GB">language/en-GB/en-GB.com_geommunity3es.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_geommunity3es.sys.ini</language>
+        </languages>
+    </administration>
+	<!-- UPDATESERVER DEFINITION -->
+        <updateservers>
+                <!-- Note: No spaces or linebreaks allowed between the server tags -->
+        	<server type="extension" priority="1" name="geommunity3es">https://www.nordmograph.com/extensions/updateserver/com_geommunity3es-update.xml</server>
+        </updateservers>
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

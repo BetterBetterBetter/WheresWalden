@@ -1,0 +1,12 @@
+[
+    {
+        "language": [
+            "PLG_FIELDS_JOOMLA_PASSWORD_TOO_SHORT",
+            "PLG_FIELDS_JOOMLA_PASSWORD_TOO_LONG",
+            "PLG_FIELDS_JOOMLA_PASSWORD_EMPTY_PASSWORD",
+            "PLG_FIELDS_JOOMLA_PASSWORD_EMPTY_RECONFIRM_PASSWORD",
+            "PLG_FIELDS_JOOMLA_PASSWORD_NOT_MATCHING"
+        ],
+        "adapter": "EasySocial"
+    }
+]
